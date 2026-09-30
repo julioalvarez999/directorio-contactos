@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Directorio de Contactos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="contenedor">
+
+      <h1>Directorio de Contactos</h1>
+
+      <section class="formulario">
+        <input type="text" id="nombre" placeholder="Nombre" />
+
+        <input type="text" id="telefono" placeholder="Teléfono" />
+
+        <button id="btnAgregar">Agregar</button>
+      </section>
+
+      <section class="busqueda">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar contacto por nombre..."
+        />
+      </section>
+
+      <section class="lista">
+        <p id="mensajeVacio">
+          Todavía no agregaste contactos.
+        </p>
+
+        <ul id="listaContactos"></ul>
+      </section>
+
+      <div class="contador">
+        <strong>
+          Contactos: <span id="contador">0</span>
+        </strong>
+      </div>
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
