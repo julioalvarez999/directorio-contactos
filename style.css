@@ -1,3 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 35px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 30px;
+  color: #333;
+}
+
+.formulario {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #28a745;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btnAgregar {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 22px;
+  font-size: 16px;
+}
+
+#btnAgregar:hover {
+  background-color: #218838;
+}
+
+.busqueda {
+  margin-top: 10px;
+}
+
+#buscador {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 .lista {
   margin-top: 35px;
   min-height: 120px;
@@ -41,8 +118,13 @@
 
 .btnEliminar {
   background-color: #c0392b;
+  color: white;
   padding: 9px 14px;
   font-size: 14px;
+}
+
+.btnEliminar:hover {
+  background-color: #a93226;
 }
 
 .contador {
@@ -50,4 +132,22 @@
   padding-top: 25px;
   border-top: 1px solid #ddd;
   font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .contenedor {
+    padding: 25px 20px;
+  }
+
+  .formulario {
+    flex-direction: column;
+  }
+
+  #btnAgregar {
+    width: 100%;
+  }
 }
