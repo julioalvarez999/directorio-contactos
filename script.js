@@ -5,6 +5,11 @@ const telefono = document.getElementById("telefono");
 const btnAgregar = document.getElementById("btnAgregar");
 const listaContactos = document.getElementById("listaContactos");
 const mensajeVacio = document.getElementById("mensajeVacio");
+const contador = document.getElementById("contador");
+
+function actualizarContador() {
+  contador.textContent = contactos.length;
+}
 
 function mostrarContactos(lista) {
   listaContactos.innerHTML = "";
@@ -40,6 +45,7 @@ function mostrarContactos(lista) {
         return item.id !== contacto.id;
       });
 
+      actualizarContador();
       mostrarContactos(contactos);
     });
 
@@ -70,5 +76,6 @@ btnAgregar.addEventListener("click", function () {
   nombre.value = "";
   telefono.value = "";
 
+  actualizarContador();
   mostrarContactos(contactos);
 });
