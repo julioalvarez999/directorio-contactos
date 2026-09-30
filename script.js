@@ -20,12 +20,34 @@ function mostrarContactos(lista) {
     const li = document.createElement("li");
     li.classList.add("contacto");
 
-    li.innerHTML = `
-      <div class="datos">
-        <span class="nombre-contacto">${contacto.nombre}</span>
-        <span class="telefono-contacto">${contacto.telefono}</span>
-      </div>
-    `;
+    const datos = document.createElement("div");
+    datos.classList.add("datos");
+
+    const nombreContacto = document.createElement("span");
+    nombreContacto.classList.add("nombre-contacto");
+    nombreContacto.textContent = contacto.nombre;
+
+    const telefonoContacto = document.createElement("span");
+    telefonoContacto.classList.add("telefono-contacto");
+    telefonoContacto.textContent = contacto.telefono;
+
+    const btnEliminar = document.createElement("button");
+    btnEliminar.classList.add("btnEliminar");
+    btnEliminar.textContent = "Eliminar";
+
+    btnEliminar.addEventListener("click", function () {
+      contactos = contactos.filter(function (item) {
+        return item.id !== contacto.id;
+      });
+
+      mostrarContactos(contactos);
+    });
+
+    datos.appendChild(nombreContacto);
+    datos.appendChild(telefonoContacto);
+
+    li.appendChild(datos);
+    li.appendChild(btnEliminar);
 
     listaContactos.appendChild(li);
   });
